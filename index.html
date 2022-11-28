@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="main">
+
+        <!-- <div class="dbox1"></div>
+        <div class="dbox1"></div>
+        <div class="dbox1"></div> -->
+        <nav>
+            <div class="logo">
+                 <img src="data:image/png;base64,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" alt="">
+              
+            </div>
+            <div class="ncontent">
+                <div class="dbox1">
+                    <h3>products </h3>
+                    <div class="extra">
+                        <i class="ri-arrow-up-s-fill"></i>
+                        <h3>HP pavelion</h3>
+                        <h3>HP pavelion</h3>
+                        <h3>HP pavelion</h3>
+                        <h3>HP pavelion</h3>
+                        <h3>HP pavelion</h3>
+                        <h3>HP pavelion</h3>
+                        <h3>HP pavelion</h3>
+                    </div>
+                </div>
+                <div class="dbox1">
+                    <h3>App and Services</h3>
+                    <div class="extra">
+                        <i class="ri-arrow-up-s-fill"></i>
+                        <h3>HP pavelion</h3>
+                        <h3>HP pavelion</h3>
+                        <h3>HP pavelion</h3>
+                    </div>
+                </div>
+
+
+                <h3>Learn</h3>
+                <!-- <h3>Crypto Assets</h3> -->
+                <h3>For Gaming</h3>
+                <h3>Support</h3>
+                <h3>English</h3>
+
+            </div>
+
+
+        </nav>
+
+
+        <div class="page1">
+            <div class="left">
+                <div class="sphotos">
+                    <img id="a1" src="img1.webp" alt="">
+                    <img id="a2" src="laptop.png" alt="">
+                    <img id="a3" src="img3.png" alt="">
+                    <img id="a4" src="img4.webp" alt="">
+                </div>
+                <div class="photo">
+                    <img src="img4.webp" alt="">
+                </div>
+            </div>
+            <div class="right">
+                <h3>HP</h3>
+                <h2>Pavilion 15 Gaming</h2>
+
+                <div class="p1text">
+                    <h4>Sacrifice nothing with the thin and powerful HP Pavilion Gaming 15 Laptop. Experience
+                        performance-grade graphics with up to AMD Ryzen™ 7 processing power that meets your gaming and
+                        multitasking needs.
+                    </h4>
+                </div>
+                <h2>$85.00</h2>
+                <div class="p1buttons">
+
+                    <select name="" id="dropdown">
+                        <option value="">1</option>
+                        <option value="">1</option>
+                        <option value="">1</option>
+                        <option value="">1</option>
+                        <option value="">1</option>
+                        <option value="">1</option>
+                    </select>
+
+                    <button>Add to cart</button>
+                </div>
+                <div class="rhr"></div>
+                <div class="p1ratting">
+                    <div class="stars">
+                        <div class="star">
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-half-s-fill"></i>
+                        </div>
+                        <p>1213 Reviews</p>
+                    </div>
+                    <div class="contentp1">
+                        Read more reviews &nbsp; <i class="ri-arrow-right-line"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- ===========page 2============================  -->
+
+        <div class="page2">
+            <div class="lbox2">
+                <h1>FREQUENTLY BOUGHT <br> TOGETHER</h1>
+                <p>Combine these two products to create your unique hardware wallet package</p>
+            </div>
+            <div class="imgs2">
+                <div class="imgs">
+                    <img src="laptop.png" alt="">
+                    <h4>Pavilion 15 Gaming</h4>
+                    <h4>$85.00</h4>
+
+                    <div class="star2">
+                        <i class="ri-star-s-fill"></i>
+                        <i class="ri-star-s-fill"></i>
+                        <i class="ri-star-s-fill"></i>
+                        <i class="ri-star-s-fill"></i>
+                        <i class="ri-star-half-s-fill"></i>
+                    </div>
+
+
+                </div>
+                <h1>+</h1>
+                <div class="imgs">
+                    <img src="mouse.jpg" alt="">
+
+
+                    <h4> SteelSeries Rival 5</h4>
+                    <h4>$3.50</h4>
+
+                    <div class="star2">
+                        <i class="ri-star-s-fill"></i>
+                        <i class="ri-star-s-fill"></i>
+                        <i class="ri-star-s-fill"></i>
+                        <i class="ri-star-s-fill"></i>
+                        <i class="ri-star-half-s-fill"></i>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="rbox2">
+                <p>
+                    Subtotal
+                <p>
+                <h1>$88.5</h1>
+                <h5>
+
+                    GST and duty not included
+                </h5>
+                <button>Add to cart</button>
+            </div>
+
+        </div>
+
+        <!-- ===========page 3============================  -->
+
+
+        <div class="page3">
+            <h1>CUSTOMERS WHO VIEWED THIS ITEM ALSO VIEWED</h1>
+
+            <div class="sp3">
+                <div class="ssp3"><img src="mouse.jpg" alt="">
+                    <h4> SteelSeries Rival 5</h4>
+                    <h4>$3.50</h4>
+
+                    <div class="star2">
+                        <i class="ri-star-s-fill"></i>
+                        <i class="ri-star-s-fill"></i>
+                        <i class="ri-star-s-fill"></i>
+                        <i class="ri-star-s-fill"></i>
+                        <i class="ri-star-half-s-fill"></i>
+                    </div>
+                    <h5>
+                        discover &nbsp;&nbsp;<i class="ri-arrow-right-line"></i>
+                    </h5>
+                </div>
+                <div class="ssp3"><img src="speaker.png" alt="">
+                    <h4> SteelSeries Rival 5</h4>
+                    <h4>$3.50</h4>
+
+                    <div class="star2">
+                        <i class="ri-star-s-fill"></i>
+                        <i class="ri-star-s-fill"></i>
+                        <i class="ri-star-s-fill"></i>
+                        <i class="ri-star-s-fill"></i>
+                        <i class="ri-star-half-s-fill"></i>
+                    </div>
+                    <h5>
+                        discover &nbsp;&nbsp;<i class="ri-arrow-right-line"></i>
+                    </h5>
+                </div>
+                <div class="ssp3"><img src="headphone.png" alt="">
+                    <h4> SteelSeries Rival 5</h4>
+                    <h4>$3.50</h4>
+
+                    <div class="star2">
+                        <i class="ri-star-s-fill"></i>
+                        <i class="ri-star-s-fill"></i>
+                        <i class="ri-star-s-fill"></i>
+                        <i class="ri-star-s-fill"></i>
+                        <i class="ri-star-half-s-fill"></i>
+                    </div>
+                    <h5>
+                        discover &nbsp;&nbsp;<i class="ri-arrow-right-line"></i>
+                    </h5>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ===========page 4============================  -->
+
+
+        <div class="page4">
+            <h1>INTRODUCING THE HP PAVELION RYZEN 5</h1>
+
+
+
+            <div class="p4b">
+                <div class="p4l">
+                    <h2>
+                        Manage over 5,500 digital assets
+                    </h2>
+                    <p>More memory lets you have up to 100 apps installed simultaneously</p>
+
+                    <h6>Suported graphics &nbsp;&nbsp;<i class="ri-arrow-right-line"></i> </h6>
+
+                    <h2>
+                        Manage over 5,500 digital assets
+                    </h2>
+                    <p>More memory lets you have up to 100 apps installed simultaneously</p>
+
+                    <h6>Suported graphics &nbsp;&nbsp;<i class="ri-arrow-right-line"></i> </h6>
+
+
+                    <h2>
+                        Manage over 5,500 digital assets
+                    </h2>
+                    <p>More memory lets you have up to 100 apps installed simultaneously</p>
+
+                    <h6>Suported graphics &nbsp;&nbsp;<i class="ri-arrow-right-line"></i> </h6>
+
+
+                    <h2>
+                        Manage over 5,500 digital assets
+                    </h2>
+                    <p>More memory lets you have up to 100 apps installed simultaneously</p>
+
+                    <h6>Suported graphics &nbsp;&nbsp;<i class="ri-arrow-right-line"></i> </h6>
+
+
+                </div>
+                <div class="images4">
+                    <img src="laptop.png" alt="">
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ===========page 5============================  -->
+
+
+        <div class="page5">
+
+            <div class="limg5">
+                <img src="https://cdn.shopify.com/s/files/1/2974/4858/files/Buy_1.png?v=1649161982" alt="">
+            </div>
+
+            <div class="p5right">
+                <H1>ONE PLACE <br>
+                    FOR ALL YOUR CRYPTO NEEDS</H1>
+
+                <div class="p5down">
+                    <div class="p5l">
+
+                        <h2>Buy</h2>
+                        <p>Buy Bitcoin and other cryptocurrencies – the simple, safe, smart way.</p>
+                        <h4>Learn about buying crypto &nbsp;&nbsp;<i class="ri-arrow-right-line"></i> </h4>
+
+                        <h2>Grow</h2>
+                        <p>Grow your crypto assets without lifting a finger all on one secure platform.</p>
+                        <h4>learn more abhout us &nbsp;&nbsp;<i class="ri-arrow-right-line"></i> </h4>
+
+
+                    </div>
+                    <div class="p5r">
+
+                        <h2>Exchange</h2>
+                        <p>Exchange cryptocurrencies in seconds to get the most out of your assets.</p>
+                        <h4>learn more abhout us &nbsp;&nbsp;<i class="ri-arrow-right-line"></i> </h4>
+
+                        <h2>Connect services</h2>
+                        <p>Access to all our smart services – DeFi apps, NFTs and more.</p>
+                        <h4>See all services &nbsp;&nbsp;<i class="ri-arrow-right-line"></i> </h4>
+                    </div>
+
+                </div>
+            </div>
+            <div class="p5f">
+                *Buy, exchange, lend and other crypto transaction services are provided by third-party partners. Ledger
+                provides no advice or recommendations on use of these third-party services.
+            </div>
+        </div>
+
+
+        <!-- ===========page 6============================  -->
+
+
+        <div class="page6">
+            <h1>TECHNICAL SPECIFICATIONS</h1>
+            <div class="mid6">
+                <div class="sbox6">
+                    <h2>Dimensions & weight</h2>
+                    <h5>Size</h5>
+                    <p>1920 x 1080 </p>
+                    <h5>Weight</h5>
+                    <p>1.8 kg</p>
+                </div>
+                <div class="sbox6">
+                    <h2>Materials</h2>
+
+                    <p> plastic.
+
+                    </p>
+                </div>
+                <div class="sbox6">
+                    <h2>Box contents</h2>
+
+                    <p>1 hardware wallet, 1 USB-C to USB-A cable, 1 getting started leaflet, 3 recovery sheets, 1
+                        keychain strap</p>
+                </div>
+            </div>
+            <div class="bottom6">
+
+                <div class="sbox6">
+                    <h2>Microcontrollers & connector</h2>
+
+                    <h5>Connector</h5>
+                    <p>
+                        USB Type-C
+                    </p>
+                    <h5>Certification level</h5>
+                    <p>CC EAL5+</p>
+                    <h5>Chips</h5>
+                    <p>ST33K1M5</p>
+                </div>
+                <div class="sbox6">
+                    <h2>Compatibility</h2>
+
+                    <p>64-bits desktop computer (Windows 8+, macOS 10.8+, Linux) excluding ARM Processors.
+                    </p>
+                    <p>Also compatible with smartphones Android 7+.</p>
+                    <p>The device is not suitable for mining</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ===============p 7=============================== -->
+
+        
+
+        <!-- ===============p 8=============================== -->
+
+
+        <div class="page8">
+            <h1>COMPARE LEDGER DEVICES</h1>
+            <h3>See all complete comparision here &nbsp;&nbsp;<i class="ri-arrow-right-line"></i> </h3>
+            <div class="parts">
+                <div class="part">
+                    <div class="p8t">
+                        <img src="img4.webp" alt="">
+                        <h2>HP Pavilion Gaming 15</h2>
+                        <p>$ 930</p>
+                    </div>
+
+                    <div class="p8b">
+                        <ul>
+                            <li>Performance     &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 61 </li>
+                            <li>Display &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;  35</li>
+                            <li>Gaming &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; 35 </li>
+                            <li>Connectivity &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 69 </li>
+                            <li>Battery Life &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  58 </li>
+                            <li>NanoReview Score &nbsp; &nbsp;&nbsp;&nbsp;  49 </li>
+                            <li>Case&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; 83</li>
+                            <h5>Discover  &nbsp; <i class="ri-arrow-right-line"></i> </h5>
+                        </ul>
+                    </div>
+                </div>
+                <div class="part">
+                    <div class="p8t">
+                        <img src="img5.png" alt="">
+                        <h2>HP Pavilion Gaming 14</h2>
+                        <p>$ 1000</p>
+                    </div>
+
+                    <div class="p8b">
+                        <ul>
+                            <li>Performance     &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 46 </li>
+                            <li>Display &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;  18</li>
+                            <li>Gaming &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; 38 </li>
+                            <li>Connectivity &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 65</li>
+                            <li>Battery Life &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  56 </li>
+                            <li>NanoReview Score &nbsp; &nbsp;&nbsp;&nbsp;  44 </li>
+                            <li>Case&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; 88</li>
+                            <h5>Discover  &nbsp; <i class="ri-arrow-right-line"></i> </h5>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- ===========page 9============================  -->
+
+        <div class="page9">
+
+            <div class="left9">
+                <h1>Stay in touch</h1>
+                <p>Announcements can be found in our blog. Press contact:
+                    media@ledger.com</p>
+                <div class="circles">
+                    <div class="circ"></div>
+                    <div class="circ"></div>
+                    <div class="circ"></div>
+                    <div class="circ"></div>
+                    <div class="circ"></div>
+                    <div class="circ"></div>
+                </div>
+            </div>
+            <div class="right9">
+                <h1>Subscribe to our
+                    newsletter</h1>
+                <p>
+                    Subscribe to our
+                    newsletter
+                    New coins supported, blog updates and exclusive offers directly in your inbox</p>
+                <input type="email" placeholder="Enter Your Email"> <br>
+                <button>
+                    <h5>Register to Newsletter </h5>
+                    <i class="ri-arrow-right-line"></i>
+                </button>
+            </div>
+
+
+        </div>
+
+
+        <!-- ===========page 10============================  -->
+
+        <div class="page10">
+
+            <div class="left10">
+
+                <div class="logo10">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAB+CAMAAAA9WLe4AAAA4VBMVEX///8AXaccFBEAAAD29fXMy8sAVqP19/p2pcsATKDY19cFAAAAWqYaEQ6Jh4YWDAgPAABBdbG0srFNjL3v7u5qZWQAVKMTCACioKAAUKFkYmCpqKhzcXBPTEqcm5qVkpHj4+JAOzng8PYgGRR/fXw1MC4nIR3f398tKCVdWlnCwcDR0NCHhYQAR55jlMKTs9IAYqnd6PG90uSsxNw6NTN7eHdUUE4Uaq09fLWPsNHN4OxLhLl8p81mm8WjvdhIQ0AAQJutzeGFm6h/nMba4e1jjb6MpsvG2OiJstJAc7GtwdoPZUnbAAAQYUlEQVR4nO1daVvbuhI2cXCaxcRNyeImkBCWkAAtSwOUtb2lp6f3//+ga2lGqyUvocA599H7pY4ty2ZeazaNVM9zcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcPi3olYMUtMSd8l3G1ClMJ+tpk5osHdg6y7VsbGh9THmi1nXGCad4XCxmf2agLP7q6BeBCeJTG9P6GGL3BgXuoshvvp0Znj6pk/R0eQCZy/Z7+GOb8IW+UPhcFvcPNg9THAwEmc60GaZHI7hcGJkY+PA+Bjat/mS7z8m1+aWaz4noHHph49bvj/Kp+SuHrTWiiD4kAyKEzi8S248jwvdxtEKTu5MhFQSpAjZDZOz0Uf8OffbFQOiObn42E8O24/i5oN+mKC/K77PeUQfcpQcbsPzTHLZPDA/xh+QqzvGa5U++Wi6kfFa2GSPGfpLeni05Tdy+LgvLNb43PMeevSwfpPc+SkoRwjp4t1KhOz5xr8XCRloIp5ha3+dP6NJemsfetmEHJjF+gcI6Yh3GfuzTD4u6oWlGSTNr+lgar1PDmvF7xSgTJYmxMIHEjLTehhj8+YGO9PxxW87IUe2xzybkGryclRrPg6Tr2s3k5CrYuoqISH+6XlTIKH3mVD5La7HvYLqjiFIKa3nE+Ltt6W2yYeOkmsfsDOosRrZhKy/GCF7W+SjGBwtuv7C8/rDDD6K2oFWfPo1MclfUWMRj6l2Vjv7/pA4BHEJ1UXH1oqERGmbCUZ/o0n++BBNxozLldoM0hk9AxornxCbUd9nvyrq2xDH4iP7EQIRmlEnNHTI21T9vWQEP6afzXFXSJit+Pc5bf4bNNa13MX0/FMvLjzOVickGnVSWNDLDegC1fRYEDKGM7LGyiXE304/hg4t/gvepiu/w4L9OCSvHR7ytvQjmZCndcgAnfnJ6Fg0Mwj5UISQ3inQ4d2gxrrQeqldXNWLUfIMQnz7SD8gjZt78OMLVy1MZ8kaK5+QbJvL32ZsvEb1WntfPdnwPULIfNSldy2MHgWiACGt+Ctr/Q5ax4YY7+Z9IUqeQ8jA+leMiMRDED9oLFAdIFzUWMhOLiF5bml5QmYwQpb/GfldjxCSEcXmExKcCsfolMqcxCMGfL/qPYOQhXa61AhZSKKkGiukYwalpmistxghHtGm1Iask79z/CWj81xCgmsxHNADiM/NfdU+5XsINkLaW10VYDhlQtqPWpOPnMRqFFLtz0XS3KZjBKJFRWPlEtKfa4+ZT3Txlibk45Ib9WSYH2wbbwXkERLI9vsnKKVTa28XvTy1ZSOk0o5UpAlJNZF0GJV5m3x5GJRMwBGlcqeuTxhi01wvq68/Rtdh5QmZJX3Q2JAQ0snSWHmEBLL8atA2HUoIPLVyGLESYkR2HCIR0uFSphor8XCH3O4sFI1VPg75A4QkbzXx6BOroLXsyCak1ZLN9wVopHSwLaF2ms3ICxEiPAPqY0XLxNWkX/ucBW1crG9CiLfHaBhnmEKCbELqSnoW0ya/MzusZY+RFyLEu+xD8xl3ESIw69UqaCwetb8NISRz0h0fz/1+jhOXSUj8IDedwgDpfbX1BTjLtOxWQppacBymCdGbyBl3FDNGhUTce00YNOiBbWgtS0Tqf4QQr7pYzucbR9nCyyZEDci9z+DVxqZJDRnfsxixEdIcH63LWKTd3uax2mR9fSJ6wZFxRDUWTS8tMKAeqRor3+3taE9Z123waoQURBYhmuivDGkTI+4y4pGXidQThODmhlyXbcIg26VfPeaxCN4iDimBDEJ6qjd1hmmTB0tPEjIM+8tE6h4mGCuQNQGZytlZkYl/i0i9DLIIURMkd/a0iY5z+0zJi40QySJjkmQg2WhJyv/aERL8pbZEjXU7BbDTtakCOHltHSLPIWS8mcJE6Pd+yKQfLemJhkSRJCEkpKH3xAlZNzxGebc3IqQ+VRqyiZNWD3CFl696ClrUB/tlHSJ/eD5EGjVijoi5/AecIll62xaXbcIGWepKAmXUvA0hrVu1oT6BHlzR0ze66GOaebQOkecQYoBEyEJMg+CwkSiS7MK2JdrYtM8YVv4JhGgZxFpKwjGdFHmXuv+E+GYXNtf35QhBrwqdXoIOu00R0L+WELUd01hxzCZsgx/kPJNzHDNfF5j8s4QcmqezVUN/iQOCe2MTJmBFeLZ4fFO0/ycSEvxU293iCHl6ekLlRQsdkKfW9dPTOTICtuenpd/VCFmY66VUQljRiJBel51RPNmuH5p6StyupfHKP4MQLdyYgrQDYrKxToV6xUgOUV8X0KQFtuXBEhyaCKHIrlxc2MoG5dik4/vNZtPvizOX0Kii9j029jSxXkkZdYoNzwR4z+xCn0xYCVGjdJRvfJN4UDgoiNHHhDwlB+04MnlWmBCvQaHHBXB2pv1OQbltspHguJPqZWJ+pIpq1mOU7MmR8YWVno3XCsFqQ9Rmv0V93A8xKPio+CRyijG6w8UJcZBhIUTLWOH3Ts0Gc7eIxsJRQez43z0xcAgsBXiOkBxYCNHCdKyPC6bcjAfJoBB6yeMExKxCyFL46wjJgYUQrfJqrcW/fnS34l8eT8gH90mAyAJ5lur6yxGyEmyEfJcboR0nLOFyhBYtdGCjIjH194EYOBSOkNVgIUSdu0U73vO4u0ULHXBUUEcXLQYdOBQWv9cRkoNChKyJrx/NOL1+JyJEFiCKCqHPjpCVUIQQVh/3iy9HgOivJ9qiCQ/EehynslZDEUJQ2mRZ4VdT2iSxLGjSpQohR8hqsBASS7VXKG3iSzEzTvNVmK4iobmaNqG4dYSshAJeFqbSCUc4+0HDxhpqLJI2QV84kCqEXGC4GmyEfBZNsD6O2GtmxqW0SSAWuimTjC51shpskbpYcTCV0ianUqL3VqRN0KOS8y0lkosOMmy5LGENMElF0r8YIFK22KggwcmVkuilKJ5+r+p1acbiNK8B5y0lIVWthm4m7p/AGa09QM7Y4p3pJK5enpd6j4bpes7OElbkp9+l+rgPYlDIaROW6K1LFUI/SkxQGTHXRM8qHPbX9Q48b/jFcP8ELw7gtyLoJTbqilMNfqNOyaHx/Q7FTEzX/AesloPPnaDCcJz85vPq5DwbFWe8UlEpiyhb5JBCpE5ZiflxP8WIcZuHiNWe0HUJYV8W8xKLeJfSOV4R0dzVGDEvh27T1bcUI+Oa6Ch72YENNkK4PUA7TpKGF5L/y0ZF68ePv/AWuSziV9k5ddO8qSx5sZIzjLQOlpYOUCBpQkx8TMTsbbOr9m9Zn17x2V4qZkIqoZ9bWW2AdYKKeUxr4uu/FrlEUW0SBOxIXktyb60uKk6IWPevbrKgzfZa918IK1SPpwhhfFzKvYzlpaIT5QE2QvgXYyFELiguDishWNkrLSusSblEL31DLJcCl65cJGvOONgfLMY8LBOE0t22umYSL/WF9m6iBKECQifEyEeVboYSwgOaxyZCwtQL9h9lQtp+6g30QoFnEUJ3NiFpkxYBmR/8u0cP6fqQ1AYQrVi2IJbMYhYhYZ+jjTYh4roDCnSivXFT/jLl2/3L8YBh4xFXl4wMhDA+5spL4JK4zmO7Iu0JIRMStsULRqyaZSIIaV8O+QsM9vbpi0bqQ55JCJh1LNmlW2lI5bssvcVGQutWmUCxb6BiLQMaVnklbbXxJVKHPC7DmSExspLvmKqIjiqiiEglZGTkA3ZLSXTk0NAbVvZUpVpf3CwChzAlhG1bgICV87vlnV87Ia3AXufO0iaWJvYBUrQuCyrjWE0orEojGgJXOE/0v1wr9PEewfMkhwohI5O+Eptq4EK4tlLGYyq1GvMbPDMhuNtHebOetRzBvnbtwuDoCtSsXRYmpKMs1RjwhYMgOfmPp4sLU4QMxwS0TySEcmvhg/GctNngj+Iw1r5Rm4OrTkyEmMv/CqDECioJUrWJAVkbmxUkBFeoobFgCsXD3ePCJlcF1YPQRIgEIKR9NJlNLPoKTVRzyd+mLzNmJIR+B/mEmMsbs1BijaEAS5u0jFdXWmOoEaLs77OQ1ut0ZF3hFSYENkyKzHx4y6ZQhNoias9CCOwX8cqE6IvaOKS0SRo1uwEpTsi2vJgJtFIEo4Kuywl5uWhRQgTSfKCJgsj7SIwWhIkQXKn62oSs1fV9mADvpVKgFLK3qCtGCIQFaNRxtGBwMFaVfGlC2undw7YV/QherpT7MhGCa67tRv2FCFmrm2SOyz9bxj1P3md3aCVkMJGw368IIYwUzwqVPBNraUKaaRnRLQF5uNnRRUkJCffl9xvkur0vRYiRETZNZfLCcviwB4ZKphQDwxFcVzaM9dR15yuoLF1IsokiaNMeheeLgaHygrQn5lu8KiEmT+pKKgVSUcvjo9TWGtL+V5KVBQcswsxeYUK4GFNSghFwoN0gdKg1l8UC8dclJL0w/ZdcCqTg7DS3txKE4N8bwQfL0xJDupQnRCVf2MsadDpjzOiqYgIr3t7imY8xpAl2WAMbISH7SF6ZkLX4k3qLvIJKwefc3bLKEBLBFqs4ESJpDEWqheOQqie0lyInzNWK3GATG7ExaU2/j+UeXpGQtWBNNiRsmqqnLpv2bq6L7DhrTy62FUT+zoRe3rd9n5Bch+spQmZiuY+cOjEwYh+gzGohIdLLwQtwv+vVCVlr1W+FvbgQ9XESah+KbUua3twJXj3c35HxZYQqPGNlLFhhCFL0NWSwdT+Nt5VcVifFyEbuSk8kRLzcITgdEfPLTIRMXiJ1olLCRsm1thCE4Py2XnAz5XT6y7IJJuKjZfKHK3lILva12w5s2V7OCFsiaFvnKZrsKF4xQQOGLRO3iZCOEtuUQEFC6NbWdzc1XhUEK6gSTJ8ebovvo2zwlTPTcLhSWZqLoBMmFfHXQkgQXU7knTC6MB1hICSRVCiLG01+3/CA0JcJUQLDhjINQAmJllJ+vrqAjT6yNui1oMT/cNAKvt2ItAkpBbq/vrpqxQVMuUDRzfgREBH3tzTQuBEygDiDG/mCtDZLWm0YCNEYoXn+cPdS7X+HPgCX+JoidTqRpbi9ygxWG56xyvJo65YLJkaI/r8SaZNpPcjb81JHkM5XZhFS7UtZJgldKXhnmwoYpoCPTIQIRrbliRAV9Lk4qW8ihH4SKiGGOd4VbHqJ/x0hkeZnNW1iK4bLgCGYzCJkYNHE8rTIwGaVm+AmpatO0I4QjUMPw/S+rfK0SFFCUghX0FhkJ8XCSotI86u0Vax9EyYLghPDhqZZhNCv31S88UWaUdxvGsXhH4CYDXVZHR7s06PmKNU/Zszo0FyZkJz9R22ofTjpBUXQIxorhrZEstNvhW4T99dvTTO+m2T7haaRkA5cMmwEjVdAJVzSHRxU+Lxqaki3d1A/Vnq732UHhhrDETyAXNmnbdSv4pGem8tt02+wQs0JYPrfd4XwPWl6j8fJbb/uM1un8DA1Pr26R/dfMM0+D4/pJVOlANyEOrox3tCxPWEt12knG2oni+TkcfIBH5F/TTt/z+ABRGdB56o52CadHg/k19Rw3FlFXzk4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODj8f+F/yF+8u+YP0BkAAAAASUVORK5CYII=" alt="">
+                </div>
+
+                <select name="" id="">
+                    <option value="">English</option>
+                    <option value="">French</option>
+                    <option value="">German</option>
+                    <option value="">Hindi</option>
+                </select>
+                <p>Copyright © Ledger SAS. All rights reserved. Ledger, Ledger Nano S, Ledger Vault, Bolos are
+                    registered
+                    trademarks of Ledger SAS</p>
+                <p>
+
+                    1 rue du mail, 75002, Paris, France
+                </p>
+
+                <h6>
+                    Payment methods
+                </h6>
+
+
+
+            </div>
+            <div class="right10">
+                <div class="mid10">
+                    <div class="sbox10">
+                        <h1>Products</h1>
+                        <p>Ledger Nano S Plus</p>
+                        <p> Ledger Nano X</p>
+                        <p> Ledger Nano S</p>
+                        <p> Compare our devices</p>
+                        <p> Bundles</p>
+                        <p> Accessories</p>
+                        <p> All products</p>
+                    </div>
+                    <div class="sbox10">
+                        <h1>For Business</h1>
+                        <p>Ledger Nano S Plus</p>
+                        <p> Ledger Nano X</p>
+                        <p> Ledger Nano S</p>
+                        <p> Compare our devices</p>
+                        <p> Bundles</p>
+                        <p> Accessories</p>
+                        <p> All products</p>
+                    </div>
+                    <div class="sbox10">
+                        <h1>Crypto Assets</h1>
+                        <p>Ledger Nano S Plus</p>
+                        <p> Ledger Nano X</p>
+                        <p> Ledger Nano S</p>
+                        <p> Compare our devices</p>
+                        <p> Bundles</p>
+                        <p> Accessories</p>
+                        <p> All products</p>
+                    </div>
+                </div>
+
+                <div class="mid10">
+
+                    <div class="sbox10">
+                        <h1>About</h1>
+                        <p>Ledger Nano S Plus</p>
+                        <p> Ledger Nano X</p>
+                        <p> Ledger Nano S</p>
+                        <p> Compare our devices</p>
+                        <p> Bundles</p>
+                        <p> Accessories</p>
+                        <p> All products</p>
+                    </div>
+                    <div class="sbox10">
+                        <h1>See also</h1>
+                        <p>Ledger Nano S Plus</p>
+                        <p> Ledger Nano X</p>
+                        <p> Ledger Nano S</p>
+                        <p> Compare our devices</p>
+                        <p> Bundles</p>
+                        <p> Accessories</p>
+                        <p> All products</p>
+                    </div>
+                    <div class="sbox10">
+                        <h1>Legal</h1>
+                        <p>Ledger Nano S Plus</p>
+                        <p> Ledger Nano X</p>
+                        <p> Ledger Nano S</p>
+                        <p> Compare our devices</p>
+                        <p> Bundles</p>
+                        <p> Accessories</p>
+                        <p> All products</p>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/ScrollTrigger.min.js"
+        integrity="sha512-YzMW3OzvgtVpIIPPpjnCy8wVTq5slHRrxnLH1oD5dkVjZf8+8DJYd+GYmmWXZNmroTqKXFFzFS3XZ/LBvaNgZg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="m3.js"></script>
+
+</body>
+
+</html>

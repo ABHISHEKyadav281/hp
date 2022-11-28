@@ -1,0 +1,793 @@
+* {
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+#main {
+    width: 100%;
+}
+
+nav {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    top: 2%;
+    width: 100%;
+    height: 6vh;
+    padding: 1.5vh 4vh;
+    color: black;
+}
+nav .logo{
+    width: 100px;
+    
+}
+nav .logo img{
+    width: 100%;
+
+}
+nav>.ncontent {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dbox1 {
+    overflow-y: hidden;
+    width: 11vw;
+    height: 3vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vw;
+
+}
+
+.dbox1:hover{
+    height: 45vh;
+}
+.extra {
+    width: 100%;
+    padding: 5% 12%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1vw;
+    position: relative;
+    background-color: #fff;
+    border-radius: 8px;
+}
+.extra>i{
+    position: absolute;
+    font-size: 3vw;
+    color: rgb(255, 255, 255);
+    top: -1.5vw;
+    left: -4%;
+}
+
+
+
+/* ================================== */
+.page1 {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.left {
+    width: 50vw;
+    height: 100%;
+    display: flex;
+
+    background-color: rgb(225, 206, 171);
+}
+
+.sphotos {
+    width: 10%;
+    height: 56%;
+    margin-top: 26%;
+    margin-left: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sphotos>img {
+    width: 100%;
+    height: 20%;
+    transform: scale(1.2);
+    border: 2px solid white;
+}
+
+.photo {
+    width: 70%;
+    height: 72%;
+    margin-top: 18%;
+    margin-left: 5%;
+    background-size: cover;
+}
+
+.photo>img {
+    width: 100%;
+    height: 100%;
+}
+
+.right {
+    width: 40vw;
+    height: 80vh;
+    margin-top: 8%;
+    margin-left: 5%;
+    color: #000;
+}
+
+.right>h3 {
+    font-size: 1.6vw;
+    color: rgb(121, 12, 121);
+    margin-bottom: 1%;
+}
+
+.right>h2 {
+    color: black;
+    font-size: 2.3vw;
+}
+
+.p1text {
+    width: 70%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    line-height: 1.3vw;
+    padding: 2% 0%;
+
+}
+
+
+.p1buttons {
+    margin-top: 5%;
+    display: flex;
+    width: 60vh;
+    gap: 5%;
+}
+
+.p1buttons>#dropdown {
+    width: 15vh;
+    height: 8vh;
+    font-size: 1.5vw;
+    font-weight: 500;
+    padding: 0 7%;
+    border-radius: 50px;
+}
+
+
+.p1buttons>button {
+    width: 25vh;
+    height: 8vh;
+    color: #fff;
+    font-size: 1.2vw;
+    font-weight: 800;
+    background-color: rgb(197, 94, 43);
+    border-radius: 50px;
+}
+
+.rhr {
+    width: 100%;
+    height: 10%;
+    border-bottom: 2px solid rgb(152, 140, 140);
+}
+
+.p1ratting {
+    width: 100%;
+    height: 8%;
+    margin-top: 7%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.p1ratting>.stars {
+    width: 30%;
+
+}
+
+.stars>.star {
+    width: 100%;
+}
+
+.stars>.star>i {
+    font-size: 1.5vw;
+    color: rgb(236, 109, 66);
+
+}
+
+.p1ratting>.contentp1 {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    font-size: 1.5vw;
+}
+
+.p1ratting>.contentp1>i {
+    font-size: 1.2vw;
+
+}
+
+
+
+
+
+/* ===========page 2===================================== */
+
+.page2 {
+    width: 100%;
+    height: 55vh;
+    display: flex;
+    color: white;
+    padding:  2% 1% 2% 2%;
+    background-color: #000;
+}
+
+.page2>.lbox2 {
+    width: 30%;
+    height: 100%;
+    padding: 2%;
+    margin-top: 5%;
+}
+
+.page2>h1 {
+    font-size: 3.5vw;
+    font-weight: 900;
+    line-height: 3.5;
+    margin-bottom: 4%;
+
+}
+
+.page2>.imgs2 {
+    width: 40vw;
+    height: 50vh;
+    display: flex;
+    gap: 2%;
+    margin-left: 10%;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgs2>.imgs {
+    width: 18vw;
+    height: 100%;
+    background: linear-gradient(to right bottom ,rgb(226,226,224), rgb(249,250,245));
+}
+.imgs>img{
+    padding-top: 4%;
+    width: 100%;
+    height: 70%;
+    font-weight: 100;
+    background-size: cover;
+}
+.imgs>h4 {
+    padding-top: 3%;
+    padding-left: 5%;
+    font-size: 1.3vw;
+    color: black;
+    
+}
+.star2{
+    padding-top: 2%;
+    padding-left: 5%;
+    width: 80%;
+}
+.page2>.imgs2>.imgs>.star2>i{
+    font-size: 1.8vh;
+    color: rgb(236, 109, 66);
+}
+
+.rbox2 {
+    width: 15%;
+    height: 60%;
+    margin-top: 11%;
+    margin-left: 1%;
+    padding-top: 2%;
+}
+.rbox2>p{
+    font-size: 26px;
+}
+.rbox2>h1{
+    padding: 5px 0px;
+}
+.rbox2>h5{
+    font-size: 16px;
+}
+.rbox2>button{
+    margin-top: 8%;
+    padding: 4% 10%;
+    border-radius: 50px;
+    font-size: 1.4em;
+    background-color: rgb(169, 78, 18);
+}
+
+
+
+
+/* ===========page 3===================================== */
+
+.page3 {
+    width: 100%;
+    height: 110vh;
+    padding: 6% 2%;
+    background-color: rgb(119, 101, 101);
+}
+
+.page3>h1 {
+    font-size: 3.5vw;
+}
+
+.sp3 {
+    width: 100%;
+    height: 70vh;
+    margin-top: 5%;
+    display: flex;
+    gap: 3.5%;
+}
+
+.ssp3 {
+    width: 30%;
+    height: 100%;
+    background: linear-gradient(to right bottom ,#e6e5e3, #fdfefa);
+
+}
+.ssp3>h4{
+    padding-left: 6%;
+}
+.ssp3>img{
+    width: 95%;
+    height: 78%;
+    background-size: cover;
+    padding: 6% 0%;
+}
+.ssp3>h5{
+    font-size: 1.3vw;
+    font-weight: 300;
+    margin-left: 6%;
+    margin-top: 2%;
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+/* ===========page 4=============================== */
+.page4 {
+    width: 100%;
+    height: 170vh;
+    padding-left: 2vw;
+    background-color: #000;
+    color: white;
+    padding: 8% 2%;
+    position: relative;
+    padding-bottom: 5%;
+}
+
+.page4>h1 {
+    font-size: 3.5vw;
+    line-height: 1;
+}
+.p4b{
+    display: flex;
+    width: 100%;
+    height: 90%;
+}
+.p4l{
+    width: 55%;
+}
+.page4 .images4 {
+    position: absolute;
+    width: 35%;
+    height: 60%;
+    z-index: 99999;
+    top: 22%;
+    right: 5%;
+}
+.images4 img{
+    margin-top: 5%;
+    width: 100%;
+}
+
+.page4 h2 {
+    font-size: 2.7vw;
+    width: 70%;
+    margin-top: 4vw;
+}
+.page4 p {
+    font-size: 1.5vw;
+    width: 70%;
+    margin-top: 1.5vw;
+    font-weight: 500;
+    margin-bottom: 1vw;
+}
+.page4 h6 {
+    font-size: 1.2vw;
+    font-weight: 600;
+    width: 70%;
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+
+
+/* =========p 5============================= */
+.page5 {
+    width: 100%;
+    height: 110vh;
+    display: flex;
+    position: relative;
+    background-color: rgb(237, 227, 227);
+}
+
+.limg5 {
+    width: 25%;
+    height: 60%;
+    margin-left: 2%;
+    margin-top: 13%;
+}
+.limg5 img{
+    width: 100%;
+    height: 100%;
+}
+.p5right{
+    width:75% ;
+    margin-left: 5%;
+    margin-top: 6%;
+}
+.p5right>h1{
+    font-size: 3vw;
+    font-family: gilroy;
+    margin-left: 3vw;
+    line-height: 1.2;
+}
+.p5down{
+    width: 100%;
+    margin-top: 4%;
+    height: 70%;
+    display: flex;
+    gap: 3%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.p5down h2{
+    font-size: 2vw;
+    font-weight: 600;
+    margin-top: 12%;
+}
+.p5down p{
+    font-size: 1.2vw;
+    font-weight: 500;
+    margin-top: 5%;
+}
+.p5down h4{
+    font-size: 1.1vw;
+    font-weight: 600;
+    margin-top: 5%;
+}
+
+
+.p5l{
+    width: 47%;
+    height: 100%;
+}
+.p5r{
+    width: 47%;
+    height: 100%;
+}
+
+.p5f{
+    position: absolute;
+    width: 90%;
+    bottom: 5%;
+    left: 5%;
+}
+
+
+
+
+
+
+/* =========p 6============================= */
+.page6 {
+    width: 100%;
+    height: 89vh;
+    padding: 6% 2%;
+    background-color: rgb(137, 117, 117);
+}
+
+.page6>h1 {
+    font-size: 3vw;
+
+}
+
+.mid6 {
+    width: 100%;
+    height: 37%;
+    display: flex;
+    gap: .5%;
+    margin-top: 2%;
+}
+
+.bottom6 {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    gap: .5%;
+    margin-top: 2%;
+}
+
+.sbox6 {
+    width: 32%;
+    height: 100%;
+    padding-right: 4%;
+}
+.sbox6>h5{
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 5%;
+}
+.sbox6>p{
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 1%;
+}
+.sbox6:nth-last-child(1) p{
+    
+    margin-bottom: 5%;
+}
+
+/* ================p 7=================== */
+
+
+
+
+
+/* ================p 8=================== */
+.page8 {
+    width: 100%;
+    height: 140vh;
+    background-color: white;
+    padding: 3% 2%;
+}
+
+.page8>h1 {
+    font-size: 4vw;
+    text-align: center;
+
+}
+
+.page8>h3 {
+    font-size: 1.2vw;
+    line-height: 4vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.parts {
+    width: 100%;
+    height: 110vh;
+    display: flex;
+    margin-top: 3%;
+    justify-content: center;
+    gap: 2%;
+}
+
+.part {
+    width: 30vw;
+    height: 100%;
+    padding: 1%;
+    background-color: rgb(225, 226, 230);
+}
+
+.p8t{
+    width: 100%;
+    height: 60%;
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+
+.p8t img{width: 100%;height: 70%;}
+
+.p8t h2{
+    font-size: 2vw;
+    font-family: gilroy;
+    margin-top: 1vw;
+}
+.p8t p{
+    font-size: 1.2vw;
+    font-family: gilroy;
+    font-weight: 600;
+    margin-top: .5vw;
+}
+.p8b{
+    width: 100%;
+    height: 40%;
+    padding: 6% 3%;
+}
+.p8b ul li{
+    text-decoration: none;
+    font-size: 1.5vw;
+    line-height: 1.3;
+    margin-left: 1vw;
+}
+.p8b h5{
+    font-size: 1.5vw;
+    display: flex;
+    margin-top: 2vw;
+    align-items: center;
+}
+
+/* =============p 9================ */
+.page9 {
+    width: 100%;
+    height: 60vh;
+    padding:2% 5%;
+    gap: 1%;
+    display: flex;
+    background-color: rgba(206, 105, 224, 0.739);
+}
+
+.page9>.left9 {
+    width: 40%;
+    height: 100%;
+    padding: 3% 2.5%;
+    /* background-color: rgb(159, 204, 165); */
+}
+.left9>p{
+    margin-top: 2%;
+    font-weight: 500;
+    font-size: 18px;
+
+}
+.left9>.circles{
+    width: 100%;
+    /* height: 45%; */
+    display: flex;
+    align-items: center;
+    margin-top: 4%;
+    gap: 2%;
+}
+.circles>.circ{
+    width: 4vw;
+    height: 4vw;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.901);
+}
+
+
+
+
+
+.page9>.right9 {
+    width: 60%;
+    height: 100%;
+    padding: 2% 3.5%;
+    /* background-color: #fff; */
+}
+.right9>h1{
+    font-size: 3vw;
+    width: 60%;
+}
+.right9>p{
+    margin-top: 1%;
+    font-size: 19px;
+    /* width: 60%; */
+}
+
+.right9>input{
+    width: 60%;
+    height: 14%;
+    border-radius: 30px;
+    border: 1px solid black;
+    padding: 2%;
+    margin-top: 2%;
+}
+.right9>button{
+    width: 48%;
+    display: flex;
+   justify-content: space-between;
+    height: 20%;
+    border-radius: 35px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.899);
+    border: 1px solid black;
+    padding: 2.5%;
+    margin-top: 2%;
+    font-size: 2vw;
+}
+
+
+
+
+
+
+
+
+
+
+/* =============p 10================ */
+.page10 {
+    width: 100%;
+    height: 100vh;
+    padding: 4%;
+    gap: 1%;
+    display: flex;
+    background-color: rgb(0, 0, 0);
+}
+
+.page10>.left10 {
+    width: 20%;
+    height: 100%;
+    color: white;
+    padding: 4% 0%;
+}
+.left10 select option{
+    background-color: #000;
+}
+
+.left10>p{
+    margin-top: 4%;
+    font-size: 17px;
+}
+.left10>h6{
+    font-size: 18px;
+    margin-top: 3%;
+}
+.left10>select{
+    width: 60%;
+    height: 10%;
+    margin:5% 0% ;
+    color: white;
+    font-size: 2vw;
+    border-radius: 30px;
+    padding: 2% 5%;
+    background-color: transparent;
+    border: 2px solid rgb(255, 255, 255);
+}
+.left10 .logo10{
+    margin-bottom: 14%;
+    width: 70%;
+    height: 10%;
+    /* background-color: #fff; */
+}
+.logo10>img{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+
+.page10>.right10 {
+    width: 77%;
+    margin-left: 5%;
+    /* background-color: rgba(183, 106, 106, 0.317); */
+}
+
+.mid10 {
+    width: 100%;
+    height: 49%;
+    display: flex;
+    margin-bottom: 1%;
+    gap: .5%;
+}
+
+.sbox10 {
+    width: 30%;
+    height: 100%;
+    padding: 3% 2%;
+    color: white;
+    /* background-color: rgba(224, 140, 140, 0.462); */
+}
+
+.sbox10>h1{
+    font-size: 2vw;
+    margin-bottom: 5%;
+}
+.sbox10>p{
+    font-size: 14px;
+    margin-top: 2%;
+}
